@@ -1,5 +1,5 @@
-# Assets (large binaries / source files)
-assets/
+# Raw source assets
+assets/floating-elements/raw/
 
 # macOS
 .DS_Store
