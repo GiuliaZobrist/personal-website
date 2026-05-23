@@ -107,8 +107,9 @@ should stay so.
 
 ## Layout
 
-- **Single column**, centred, max `--col` (720 px) for content.
-- **Outer wrap** adds horizontal padding for smaller viewports.
+- **Single column**, centred, max `--col` (800 px) for content.
+- **Outer wrap** is `calc(--col + 6rem)` — 3 rem equal margin on each side,
+  symmetric by design. Padding collapses to `--sp-5` (2.5 rem) on smaller viewports.
 - Floating margin images appear only when the viewport is wide enough to show
   true margins (> 900 px) — below that they would overlap content.
 - Two-sided margin logic (inner > outer) does not apply here (no print target),
