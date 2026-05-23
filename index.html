@@ -295,8 +295,16 @@
     .floating-img:hover { pointer-events: auto; }
     .floating-img:hover figcaption { opacity: 1; }
 
-    /* hide when viewport is too narrow to show side margins */
-    @media (max-width: 900px) { .floating-img { display: none; } }
+    /* narrow viewports: scale down and hug the edges
+       width overrides the inline --fi-scale calc since inline styles win on custom props */
+    @media (max-width: 900px) {
+      .floating-img { width: 90px; opacity: 0.7; }
+      figure.floating-img:nth-of-type(1) { right: 0; left: auto; bottom: 20vh; top: auto; }
+      figure.floating-img:nth-of-type(2) { left: 0; right: auto; top: 10vh; bottom: auto; }
+    }
+    @media (max-width: 640px) {
+      .floating-img { width: 100px; }
+    }
 
     /* ── Responsive ── */
     @media (max-width: 640px) {
