@@ -1,5 +1,6 @@
-# Raw source assets
-assets/floating-elements/raw/
+# Assets — only published/ is tracked
+assets/*
+!assets/published/
 
 # macOS
 .DS_Store
