@@ -182,6 +182,107 @@
       letter-spacing: 0.02em;
     }
 
+    /* ── Project cards ── */
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-3);
+    }
+
+    .project-card {
+      width: calc(50% - var(--sp-3) / 2);
+      min-width: 260px;
+    }
+
+    .project-card details summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .project-card details summary::-webkit-details-marker { display: none; }
+
+    .project-card-thumb-wrap {
+      position: relative;
+      margin-bottom: var(--sp-2);
+    }
+
+    .project-card-thumb {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+      max-height: 200px;
+      border: 1px solid var(--rule);
+    }
+
+    .project-card-expand-hint {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      font-size: var(--t-xs);
+      color: var(--muted);
+      background: rgba(250, 249, 246, 0.88);
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+      pointer-events: none;
+    }
+
+    .project-card details[open] .project-card-expand-hint { display: none; }
+
+    .project-card h3 {
+      font-size: var(--t-md);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin: 0 0 var(--sp-1);
+    }
+
+    .project-card .tags { margin-top: var(--sp-1); margin-bottom: var(--sp-3); }
+
+    .project-card-desc {
+      color: var(--muted);
+      font-size: var(--t-base);
+      line-height: 1.7;
+      margin: var(--sp-2) 0;
+      max-width: 58ch;
+    }
+
+    .project-card-images {
+      display: flex;
+      gap: var(--sp-2);
+      justify-content: center;
+      margin-bottom: var(--sp-2);
+    }
+
+    .project-card-images img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .project-card ul {
+      padding-left: 1.2em;
+      color: var(--muted);
+      font-size: var(--t-base);
+      line-height: 1.8;
+      margin: 0 0 var(--sp-2);
+      max-width: 58ch;
+    }
+
+    .project-link {
+      color: var(--sage);
+      font-size: var(--t-sm);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+    .project-link:hover { border-color: var(--sage); }
+
     /* ── Contact ── */
     .contact { padding: var(--sp-7) 0 var(--sp-8); }
 
@@ -324,6 +425,7 @@
           <li><a href="#past">Background</a></li>
           <li><a href="#present">Now</a></li>
           <li><a href="#build">Building</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -365,6 +467,58 @@
             <div class="chapter-body">
               <h2>What I build</h2>
               <p>I build AI agents for my own life. I have been collecting health, movement, and finance data for years, and rather than reading dashboards built by others, I write tools that interrogate that data myself. The projects are on <a href="https://github.com/GiuliaZobrist" target="_blank" rel="noopener">GitHub</a> and will be public soon.</p>
+            </div>
+          </div>
+
+          <div class="chapter" id="projects">
+            <div class="chapter-body">
+              <h2>What I've built</h2>
+              <div class="projects-grid">
+              <!-- project cards inserted here by /presentable-readme skill -->
+
+              <!-- Project card: cleanup-safari-tabs — generated 2026-06-13 -->
+              <div class="project-card">
+                <details>
+                  <summary>
+                    <div class="project-card-thumb-wrap">
+                      <img
+                        class="project-card-thumb"
+                        src="assets/github-projects/obsidian-tree-total.png"
+                        alt="Obsidian graph view of cleanup-safari-tabs vault"
+                      />
+                      <span class="project-card-expand-hint">click to expand ↓</span>
+                    </div>
+                    <h3>cleanup-safari-tabs</h3>
+                  </summary>
+
+                  <p class="project-card-desc">One command captures all open Safari tabs, groups them by topic with Claude AI, and saves them as searchable Obsidian notes — turns tab hoarding into an organized archive.</p>
+
+                  <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Claude AI</span>
+                    <span class="tag">AppleScript</span>
+                    <span class="tag">Obsidian</span>
+                  </div>
+
+                  <div class="project-card-images">
+                    <img src="assets/github-projects/obsidian-tree-detail.png" alt="Obsidian graph detail with labeled tag nodes" />
+                    <img src="assets/github-projects/one-obsidian-note.png" alt="Single Obsidian note for a tag" />
+                  </div>
+
+                  <ul>
+                    <li>Reads every open tab from Safari via AppleScript in one command</li>
+                    <li>Claude invents tag names from the actual content — no preset categories</li>
+                    <li>Stable tags persist across sessions; new tabs are appended, not buried</li>
+                    <li>Sensitive data scrubbed from URLs before anything leaves your machine</li>
+                  </ul>
+
+                  <a class="project-link" href="https://github.com/GiuliaZobrist/cleanup-safari-tabs">
+                    View on GitHub →
+                  </a>
+                </details>
+              </div>
+
+              </div><!-- /.projects-grid -->
             </div>
           </div>
 
